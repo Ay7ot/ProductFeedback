@@ -80,3 +80,7 @@
     color: #34a853;
   }
 }
+
+.comments:last-child hr {
+  display: none;
+}

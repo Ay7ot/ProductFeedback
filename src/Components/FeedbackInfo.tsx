@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import {RxCaretLeft, RxCaretUp} from 'react-icons/rx'
 import {BsChatFill} from 'react-icons/bs'
 import Comments from "./Comments"
+import { useEffect } from "react"
 
 export default function FeedbackInfo() {
     
@@ -50,11 +51,30 @@ export default function FeedbackInfo() {
         )
     }
 
-    
+    //Add comment component
+    const AddComment = () => {
+        return (
+            <div className="rounded-lg bg-white p-6 transition transform mt-6 flex flex-col gap-4">
+                <h2 className="text-blue-400 font-semibold text-lg">Add Comment</h2>
+                <textarea 
+                    placeholder="Type your comment here"
+                    className="max-h-[250px] outline-none p-4 bg-slate-200 rounded-xl w-full"
+                />
+                <div className="flex justify-between items-center">
+                    <p className="text-[#808080] text-[0.9rem]">250 Characters Left</p>
+                    <button className="p-4 bg-blue-400 rounded-lg text-white">Post Comment</button>
+                </div>
+            </div>
+        )
+    }
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    }, [location.pathname])
     
     return (
-        <div className="px-6 pt-14 md:px-[10%] lg:px-[15%]">
-            <div className="flex justify-between items-center mb-6">
+        <div className="px-6 pt-10 md:px-[10%] lg:px-[15%]">
+            <div className="flex justify-between items-center mb-6 sticky top-0 py-4 z-[99999] bg-[#f4f5f7] ">
                 <button onClick={goBack} className="flex items-center gap-3">
                    <i className="text-blue-400 font-bold text-[1.3rem]"> <RxCaretLeft /></i>
                     <p>Go back</p>
@@ -65,6 +85,7 @@ export default function FeedbackInfo() {
             </div>
             <MainFeedback />
             {comments.length > 0 && <Comments comments={comments} />}
+            <AddComment />
         </div>
     )
 }

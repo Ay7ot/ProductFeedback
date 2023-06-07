@@ -3,14 +3,14 @@ import { CommentType } from "../types";
 
 export default function Comments({comments}: {comments: CommentType[]}) {
     return (
-        <div  className="rounded-lg bg-white p-6 transition transform mt-6">
+        <div className="rounded-lg bg-white p-6 transition transform mt-6">
             <h3 className="font-bold text-blue-400 text-medium mb-6">{`${comments.length} Comment${comments.length > 1 ? 's' : ''}`}</h3>
-            <div className="comments">
+            <div className="">
                 {comments.map((comment, index) => {
                     const username = comment.author.toLowerCase().split(' ').join('')
 
                     return (
-                        <div className="mb-6">
+                        <div className="mb-6 comments">
                             <div className="flex w-full items-center justify-between">
                                 <div className="flex gap-2">
                                     <img 

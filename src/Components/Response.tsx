@@ -9,7 +9,9 @@ export default function Response() {
 
     if(feedbacks.length < 1){
         return (
-            <Loader />
+            <div className="grid place-content-center min-h-[80vh]">
+                <Loader />
+            </div>
         )
     }
 

@@ -7,11 +7,7 @@ export type feedbacksType = {
     "category": string;
     "creator": string;
     "createdAt": string;
-    "comments": {
-        "author": string;
-        "profilePhoto": string;
-        'text': string;
-    }[]
+    "comments": CommentType[]
     "description": string;
     "name": string;
     "profilePhoto": string;
@@ -19,8 +15,8 @@ export type feedbacksType = {
     "title": string;
     "updatedAt": string;
     "upvotes": string[];
-    "_v": string;
-    "__id": string;
+    "__v": string;
+    "_id": string;
 }
 
 export type AppActionType = {
@@ -28,4 +24,10 @@ export type AppActionType = {
     payload?: {
         feedbackPayload: feedbacksType[]
     }
+}
+
+export type CommentType = {
+    "author": string;
+    "profilePhoto": string;
+    'text': string;
 }

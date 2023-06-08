@@ -2,6 +2,7 @@ import { CommentType } from "../types";
 
 
 export default function Comments({comments}: {comments: CommentType[]}) {
+    
     return (
         <div className="rounded-lg bg-white p-6 transition transform mt-6">
             <h3 className="font-bold text-blue-400 text-medium mb-6">{`${comments.length} Comment${comments.length > 1 ? 's' : ''}`}</h3>

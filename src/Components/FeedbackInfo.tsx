@@ -73,7 +73,7 @@ export default function FeedbackInfo() {
     }, [location.pathname])
     
     return (
-        <div className="px-6 pt-10 md:px-[10%] lg:px-[15%]">
+        <div className="px-6 pt-10 pb-6 md:px-[10%] lg:px-[15%]">
             <div className="flex justify-between items-center mb-6 sticky top-0 py-4 z-[99999] bg-[#f4f5f7] ">
                 <button onClick={goBack} className="flex items-center gap-3">
                    <i className="text-blue-400 font-bold text-[1.3rem]"> <RxCaretLeft /></i>
